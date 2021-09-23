@@ -9,9 +9,6 @@
 #define LIST_H
 
 #include <string>
-#include <sstream>
-#include "exception.h"
-#include "header.h"
 
 template <class T>
 class List;
