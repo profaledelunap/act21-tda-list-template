@@ -9,30 +9,34 @@
 #include "catch.h"
 #include "list.h"
 
-TEST_CASE("testing insert_at", "[List]") {
+TEST_CASE("testing create", "[List]")
+{
 	List<int> b1;
-	b1.push_front(7); b1.push_front(6); b1.push_front(5);
-	b1.push_front(4); b1.push_front(3); b1.push_front(2);
+	b1.create(7);
+	b1.create(6);
+	b1.create(5);
+	b1.create(4);
+	b1.create(3);
+	b1.create(2);
 
-	SECTION ( "b1.insert_at(100, 0)" ) {
-		b1.insert_at(100, 0);
+	SECTION("b1.create(100, 0)")
+	{
+		b1.create(100, 0);
 		REQUIRE(b1.length() == 7);
-		REQUIRE(b1.toString() == "[100, 2, 3, 4, 5, 6, 7]");
+		REQUIRE(b1.string() == "[100, 2, 3, 4, 5, 6, 7]");
 	}
 
-	SECTION ( "b1.insert_at(100, 3)" ) {
-		b1.insert_at(100, 3);
+	SECTION("b1.create(100, 3)")
+	{
+		b1.create(100, 3);
 		REQUIRE(b1.length() == 7);
-		REQUIRE(b1.toString() == "[2, 3, 4, 100, 5, 6, 7]");
+		REQUIRE(b1.string() == "[2, 3, 4, 100, 5, 6, 7]");
 	}
 
-	SECTION ( "b1.insert_at(100, 6)" ) {
-		b1.insert_at(100, 6);
+	SECTION("b1.create(100, 6)")
+	{
+		b1.create(100, 6);
 		REQUIRE(b1.length() == 7);
-		REQUIRE(b1.toString() == "[2, 3, 4, 5, 6, 7, 100]");
-	}
-
-	SECTION ( "b1.insert_at(100, 7)" ) {
-		REQUIRE_THROWS_AS(b1.insert_at(100, 1000), IndexOutOfBounds);
+		REQUIRE(b1.string() == "[2, 3, 4, 5, 6, 7, 100]");
 	}
 }

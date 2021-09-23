@@ -3,7 +3,7 @@
 // File: list.h
 // Author:
 // Date:
-// 
+//
 // =================================================================
 #ifndef LIST_H
 #define LIST_H
@@ -13,100 +13,167 @@
 #include "exception.h"
 #include "header.h"
 
-template <class T> class List;
+template <class T>
+class List;
 
 // =================================================================
 // Definition of the Node class
 // =================================================================
 template <class T>
-class Node {
+class Node
+{
 private:
 	Node(T);
-	Node(T, Node<T>*);
+	Node(T, Node<T> *);
 
-	T	    value;
+	T data;
 	Node<T> *next;
 
 	friend class List<T>;
 };
 
 // =================================================================
-// Constructor. Initializes the value of the node. The variable next
-// is initialized to null.
+// Constructor. Initializes the data of the node. The variable next
+// is initialized to nullptr.
 //
-// @param val, stored value in the node.
+// @param val, stored data in the node.
 // =================================================================
 template <class T>
-Node<T>::Node(T val) : value(val), next(NULL) {
+Node<T>::Node(T val) : data(val), next(nullptr)
+{
 }
 
 // =================================================================
 // Constructor. Initializes both instance variables.
 //
-// @param val, stored value in the node.
+// @param val, stored data in the node.
 // @param nxt, the next node.
 // =================================================================
 template <class T>
-Node<T>::Node(T val, Node* nxt) : value(val), next(nxt) {
+Node<T>::Node(T val, Node *nxt) : data(val), next(nxt)
+{
 }
 
 // =================================================================
 // Definition of the List class
 // =================================================================
 template <class T>
-class List {
+class List
+{
 private:
 	Node<T> *head;
-	uint 	size;
+	uint size;
 
 public:
 	List();
 	~List();
 
-	uint  length() const;
+	uint length() const;
 	bool empty() const;
-	bool contains(T) const;
+
+	void create(T);
+	void create(T, uint);
+	uint get(T) const;
+	T read(uint) const;
+	void update(T, uint);
+	bool del(T);
+	T clear(uint);
 	void clear();
-	std::string toString() const;
 
-	T    front() const;
-	T    last() const;
-	T    get(uint) const;
-
-	void push_front(T);
-	void push_back(T);
-	void insert_at(T, uint);
-
-	T    pop_front();
-	T 	 pop_back();
-	T    remove_at(uint);
-
-	long int  indexOf(T) const;
+	std::string string() const;
 };
 
 // =================================================================
 // Constructor. Initializes both instance variables to zero.
 // =================================================================
 template <class T>
-List<T>::List() :head(NULL), size(0) {
+List<T>::List() : head(nullptr), size(0)
+{
 }
 
 // =================================================================
-// Destructor. Remove all items from the list.
+// Destructor. Removes all items from the list.
 // =================================================================
 template <class T>
-List<T>::~List() {
+List<T>::~List()
+{
 	clear();
 }
 
 // =================================================================
-// Returns if the list is empty or not
-//
-// @returns true if the list is empty, false otherwise.
+// Adds an element at the start of the linked list. The element that
+// was at the begining is shifted to the right.
 // =================================================================
 template <class T>
-bool List<T>::empty() const {
-	return (head == NULL);
+void List<T>::create(T val)
+{
+}
+
+// =================================================================
+// Adds an element in index (0 <= index <= size). The element that
+// was in that position is shifted to the right.
+// =================================================================
+template <class T>
+void List<T>::create(T val, uint index)
+{
+}
+
+// =================================================================
+// Returns the position of an item in the list.
+//
+// @returns the position of an item in the list, -1 otherwise.
+// =================================================================
+template <class T>
+uint List<T>::get(T val) const
+{
+}
+
+// =================================================================
+// Returns the value of an item at the given position in the list.
+//
+// @returns the value of an item at the given position in the list.
+// =================================================================
+template <class T>
+T List<T>::read(uint index) const
+{
+}
+
+// =================================================================
+// Updates the value of an element at the given position.
+// =================================================================
+template <class T>
+void List<T>::update(T val, uint index)
+{
+}
+
+// =================================================================
+// Deletes the element found in index (0 <= index <size).
+//
+// @returns the element that was at the index.
+// =================================================================
+template <class T>
+T List<T>::clear(uint index)
+{
+}
+
+// =================================================================
+// Removes all the items from the list.
+// =================================================================
+template <class T>
+void List<T>::clear()
+{
+}
+
+// =================================================================
+// Deletes the first instance of the given value and returns true
+// if an element was deleted.
+//
+// @returns true if the first instance of the value was found and
+// 			deleted.
+// =================================================================
+template <class T>
+bool List<T>::del(T val)
+{
 }
 
 // =================================================================
@@ -115,45 +182,20 @@ bool List<T>::empty() const {
 // @returns size, the number of items in the list.
 // =================================================================
 template <class T>
-uint List<T>::length() const {
+uint List<T>::length() const
+{
 	return size;
 }
 
 // =================================================================
-// Determines if an item is in the list.
+// Returns true if the list is empty or false if not.
 //
-// @returns true if val is in the list, false otherwise
+// @returns true if the list is empty, false otherwise.
 // =================================================================
 template <class T>
-bool List<T>::contains(T val) const {
-	Node<T> *p;
-
-	p = head;
-	while (p != NULL) {
-		if(p->value == val) {
-			return true;
-		}
-		p = p->next;
-	}
-	return false;
-}
-
-// =================================================================
-// Remove all items from the list.
-// =================================================================
-template <class T>
-void List<T>::clear() {
-	Node<T> *p, *q;
-
-	p = head;
-	while (p != NULL){
-		q = p->next;
-		delete p;
-		p = q;
-	}
-
-	head = NULL;
-	size = 0;
+bool List<T>::empty() const
+{
+	return (head == nullptr);
 }
 
 // =================================================================
@@ -162,205 +204,24 @@ void List<T>::clear() {
 // @returns a string containing all the elements of the list.
 // =================================================================
 template <class T>
-std::string List<T>::toString() const {
+std::string List<T>::string() const
+{
 	std::stringstream aux;
 	Node<T> *p;
 
 	p = head;
 	aux << "[";
-	while (p != NULL) {
-		aux << p->value;
-		if (p->next != NULL) {
+	while (p != nullptr)
+	{
+		aux << p->data;
+		if (p->next != nullptr)
+		{
 			aux << ", ";
 		}
 		p = p->next;
 	}
 	aux << "]";
 	return aux.str();
-}
-
-// =================================================================
-// Returns the first item in the list.
-//
-// @returns the object T at the beginning of the list.
-// @throws NoSuchElement, if the list is empty.
-// =================================================================
-template <class T>
-T List<T>::front() const {
-	if (empty()) {
-		throw NoSuchElement();
-	}
-
-	return head->value;
-}
-
-// =================================================================
-// Returns the last item in the list.
-//
-// @returns the object T at the end of the list.
-// @throws NoSuchElement, if the list is empty.
-// =================================================================
-template <class T>
-T List<T>::last() const {
-	Node<T> *p;
-
-	if (empty()) {
-		throw NoSuchElement();
-	}
-
-	p = head;
-	while (p->next != NULL) {
-		p = p->next;
-	}
-	return p->value;
-}
-
-// =================================================================
-// Returns the element that is in the position indicated by index.
-//
-// @returns the element in index
-// @throws IndexOutOfBounds, if index >= size.
-// =================================================================
-template <class T>
-T List<T>::get(uint index) const {
-	T aux;
-
-	// TO DO
-	return aux;
-}
-
-// =================================================================
-// Add an item to the beginning of the list. Increase the size of
-// the list.
-// =================================================================
-template <class T>
-void List<T>::push_front(T val) {
-	Node<T> *q;
-
-	q = new Node<T>(val);
-	q->next = head;
-	head = q;
-	size++;
-}
-
-// =================================================================
-// Add an item to the end of the list. Increase the size of
-// the list.
-// =================================================================
-template <class T>
-void List<T>::push_back(T val) {
-	Node<T> *p, *q;
-
-	if (empty()) {
-		push_front(val);
-		return;
-	}
-
-	p = head;
-	while (p->next != NULL) {
-		p = p->next;
-	}
-
-	q = new Node<T>(val);
-	q->next = p->next;
-	p->next = q;
-	size++;
-}
-
-// =================================================================
-// Add an element in index (0 <= index <= size). The element that
-// was in that position is shifted to the right.
-//
-// @throws IndexOutOfBounds, if index > size.
-// =================================================================
-template <class T>
-void List<T>::insert_at(T val, uint index) {
-	// TO DO
-}
-
-// =================================================================
-// Delete the item at the beginning of the list.
-//
-// @returns the element that was at the beginning of the list.
-// @throws NoSuchElement if the list is empty
-// =================================================================
-template <class T>
-T List<T>::pop_front() {
-	T val;
-	Node<T> *p;
-
-	if (empty()) {
-		throw NoSuchElement();
-	}
-
-	p = head;
-
-	head = p->next;
-	val = p->value;
-
-	delete p;
-	size--;
-	return val;
-}
-
-// =================================================================
-// Delete the item at the end of the list.
-//
-// @returns the element that was at the end of the list.
-// @throws NoSuchElement if the list is empty
-// =================================================================
-template <class T>
-T List<T>::pop_back() {
-	Node<T> *p, *q;
-	T val;
-
-	if (empty()) {
-		throw NoSuchElement();
-	}
-
-	if (size == 1) {
-		return pop_front();
-	}
-
-	q = NULL;
-	p = head;
-	while (p->next != NULL) {
-		q = p;
-		p = p->next;
-	}
-
-	q->next = p->next;
-	val = p->value;
-
-	delete p;
-	size--;
-
-	return val;
-}
-
-// =================================================================
-// Delete the element found in index (0 <= index <size).
-//
-// @returns the element that was in index.
-// @throws IndexOutOfBounds, if index >= size.
-// =================================================================
-template <class T>
-T List<T>::remove_at(uint index) {
-	T aux;
-	// TO DO
-	return aux;
-}
-
-// =================================================================
-// Returns the position of an item in the list.
-//
-// @returns the position of an item in the list, -1 otherwise.
-// @throws IndexOutOfBounds, if index >= size.
-// =================================================================
-template <class T>
-long int List<T>::indexOf(T val) const {
-	// TO DO
-	return -1;
 }
 
 #endif /* LIST_H */
