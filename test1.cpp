@@ -20,7 +20,7 @@ TEST_CASE("testing read", "[List]")
 	b1.create(3);
 	b1.create(2);
 
-	REQUIRE(b1.read(0) == 2);
-	REQUIRE(b1.read(2) == 4);
-	REQUIRE(b1.read(5) == 7);
+	REQUIRE(b1.get(0) == 2);
+	REQUIRE(b1.get(2) == 4);
+	REQUIRE(b1.get(5) == 7);
 }

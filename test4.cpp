@@ -19,23 +19,23 @@ TEST_CASE("testing get", "[List]")
 	b1.create(3);
 	b1.create(2);
 
-	SECTION("b1.get(2)")
+	SECTION("b1.read(2)")
 	{
-		REQUIRE(b1.get(2) == 0);
+		REQUIRE(b1.read(2) == 0);
 	}
 
-	SECTION("b1.get(7)")
+	SECTION("b1.read(7)")
 	{
-		REQUIRE(b1.get(7) == 5);
+		REQUIRE(b1.read(7) == 5);
 	}
 
-	SECTION("b1.get(5)")
+	SECTION("b1.read(5)")
 	{
-		REQUIRE(b1.get(5) == 3);
+		REQUIRE(b1.read(5) == 3);
 	}
 
-	SECTION("b1.get(100)")
+	SECTION("b1.read(100)")
 	{
-		REQUIRE(b1.get(100) == -1);
+		REQUIRE(b1.read(100) == -1);
 	}
 }

@@ -59,22 +59,22 @@ class List
 {
 private:
 	Node<T> *head;
-	uint size;
+	int size;
 
 public:
 	List();
 	~List();
 
-	uint length() const;
+	int length() const;
 	bool empty() const;
 
 	void create(T);
-	void create(T, uint);
-	uint get(T) const;
-	T read(uint) const;
-	void update(T, uint);
+	void create(T, int);
+	int read(T) const;
+	T get(int) const;
+	void update(T, int);
 	bool del(T);
-	T clear(uint);
+	T clear(int);
 	void clear();
 
 	std::string string() const;
@@ -111,7 +111,7 @@ void List<T>::create(T val)
 // was in that position is shifted to the right.
 // =================================================================
 template <class T>
-void List<T>::create(T val, uint index)
+void List<T>::create(T val, int index)
 {
 }
 
@@ -121,7 +121,7 @@ void List<T>::create(T val, uint index)
 // @returns the position of an item in the list, -1 otherwise.
 // =================================================================
 template <class T>
-uint List<T>::get(T val) const
+int List<T>::read(T val) const
 {
 }
 
@@ -131,7 +131,7 @@ uint List<T>::get(T val) const
 // @returns the value of an item at the given position in the list.
 // =================================================================
 template <class T>
-T List<T>::read(uint index) const
+T List<T>::get(int index) const
 {
 }
 
@@ -139,7 +139,7 @@ T List<T>::read(uint index) const
 // Updates the value of an element at the given position.
 // =================================================================
 template <class T>
-void List<T>::update(T val, uint index)
+void List<T>::update(T val, int index)
 {
 }
 
@@ -149,7 +149,7 @@ void List<T>::update(T val, uint index)
 // @returns the element that was at the index.
 // =================================================================
 template <class T>
-T List<T>::clear(uint index)
+T List<T>::clear(int index)
 {
 }
 
@@ -179,7 +179,7 @@ bool List<T>::del(T val)
 // @returns size, the number of items in the list.
 // =================================================================
 template <class T>
-uint List<T>::length() const
+int List<T>::length() const
 {
 	return size;
 }

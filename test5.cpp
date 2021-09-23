@@ -23,12 +23,12 @@ TEST_CASE("testing update", "[List]")
     SECTION("b1.update(3, 0)")
     {
         b1.update(3, 0);
-        REQUIRE(b1.read(0) == 3);
+        REQUIRE(b1.get(0) == 3);
     }
 
     SECTION("b1.update(8, 5)")
     {
         b1.update(8, 5);
-        REQUIRE(b1.read(5) == 8);
+        REQUIRE(b1.get(5) == 8);
     }
 }
