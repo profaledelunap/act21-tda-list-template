@@ -1,5 +1,5 @@
 ![Tec de Monterrey](images/logotecmty.png)
-# Act 2.1 - Implementación en equipo de un ADT de estructura de datos lineales
+# Act 2.1 - Implementación de un ADT de estructura de datos lineales
 
 ## <span style="color: rgb(26, 99, 169);">¿Qué tengo que hacer?</span>
 En este repositorio encontrarás el archivo "list.h" que deberás modificar para el desarrollo de esta actividad. Deberás colocar en la parte superior, en comentarios, tus datos. Por ejemplo:
