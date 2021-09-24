@@ -18,7 +18,7 @@ Diseña e implementa, de forma <span style="text-decoration-line: underline;">fo
 
 Dependiendo del ADT de estructura de datos lineal deberán implementar las operaciones CRUD (Create, Read (buscar), Update, Delete) elementos en la estructura de datos. Revisa el documento TC1031_List.pdf para conocer la especificación lógica de la clase. Algunas operaciones no aplican para ciertas estructura de datos.
 
-<br>Todas las funcionalidades deberán de estar correctamente alineadas y documentadas.&nbsp; Recuerda que todas las funcionalidades deberán pasar exitosamente todas las pruebas. Como parte de la documentación deberá incluirse la complejidad de cada una de ellas.
+<br>Todas las funcionalidades deberán de estar correctamente alineadas y documentadas.&nbsp; Además, deberas incluir el orden de complejidad en el peor de los casos de cada algoritmo implementado. Recuerda que todas las funcionalidades deberán pasar exitosamente todas las pruebas. Como parte de la documentación deberá incluirse la complejidad de cada una de ellas.
 
 Para probar tu implementación, ejecuta el comando:
 
@@ -43,8 +43,8 @@ donde X represesenta el número correspondiente de alguna de las 5 pruebas.
   - **Bien (40%)** - pasa correctamente el 50% de los casos de prueba.
   - **Insuficiente (20%)** - pasa correctamente menos del 50% de los casos de prueba.
 
+- **10%** - Especifican en cada uno de las funcionalidades la complejidad computacional como parte de su documentación.
 - **10%** - El código deberá seguir los lineamientos estipulados en el estándar de codificación: <span class="instructure_file_holder link_holder">[liga_estándar_codificación](estandar.pdf)</span>
-- **10%** - Se respetan los nombres de las funciones en la aplicación.
 
 ## <span style="color: rgb(26, 99, 169);">**¿Dónde la entrego?**</span>
 
