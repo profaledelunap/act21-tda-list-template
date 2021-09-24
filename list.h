@@ -100,6 +100,8 @@ List<T>::~List()
 // =================================================================
 // Adds an element at the start of the linked list. The element that
 // was at the begining is shifted to the right.
+//
+// Worst case complexity: O()
 // =================================================================
 template <class T>
 void List<T>::create(T val)
@@ -109,6 +111,8 @@ void List<T>::create(T val)
 // =================================================================
 // Adds an element in index (0 <= index <= size). The element that
 // was in that position is shifted to the right.
+//
+// Worst case complexity: O()
 // =================================================================
 template <class T>
 void List<T>::create(T val, int index)
@@ -119,6 +123,8 @@ void List<T>::create(T val, int index)
 // Returns the position of an item in the list.
 //
 // @returns the position of an item in the list, -1 otherwise.
+//
+// Worst case complexity: O()
 // =================================================================
 template <class T>
 int List<T>::read(T val) const
@@ -129,6 +135,8 @@ int List<T>::read(T val) const
 // Returns the value of an item at the given position in the list.
 //
 // @returns the value of an item at the given position in the list.
+//
+// Worst case complexity: O()
 // =================================================================
 template <class T>
 T List<T>::get(int index) const
@@ -137,6 +145,8 @@ T List<T>::get(int index) const
 
 // =================================================================
 // Updates the value of an element at the given position.
+//
+// Worst case complexity: O()
 // =================================================================
 template <class T>
 void List<T>::update(T val, int index)
@@ -147,6 +157,8 @@ void List<T>::update(T val, int index)
 // Deletes the element found in index (0 <= index <size).
 //
 // @returns the element that was at the index.
+//
+// Worst case complexity: O()
 // =================================================================
 template <class T>
 T List<T>::clear(int index)
@@ -155,6 +167,8 @@ T List<T>::clear(int index)
 
 // =================================================================
 // Removes all the items from the list.
+//
+// Worst case complexity: O()
 // =================================================================
 template <class T>
 void List<T>::clear()
@@ -167,6 +181,8 @@ void List<T>::clear()
 //
 // @returns true if the first instance of the value was found and
 // 			deleted.
+//
+// Worst case complexity: O()
 // =================================================================
 template <class T>
 bool List<T>::del(T val)
